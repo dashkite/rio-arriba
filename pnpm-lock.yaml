@@ -20,6 +20,9 @@ importers:
       '@dashkite/neon-drive':
         specifier: link:../neon-drive
         version: link:../neon-drive
+      '@dashkite/posh':
+        specifier: link:../posh
+        version: link:../posh
       '@dashkite/rio':
         specifier: link:../rio
         version: link:../rio

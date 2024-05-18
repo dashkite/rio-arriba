@@ -6,6 +6,12 @@ validate = ( html ) ->
 
   Fn.pipe [
 
+    Rio.activate [
+      Rio.form
+      Form.prefill
+      Rio.render html
+    ]
+
     Rio.invalid [
       Error.capture
       Rio.form

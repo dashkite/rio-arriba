@@ -52,6 +52,7 @@
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
     "@dashkite/neon-drive": "link:../neon-drive",
+    "@dashkite/posh": "link:../posh",
     "@dashkite/rio": "link:../rio",
     "@dashkite/rio-forms": "link:../rio-forms",
     "@dashkite/rio-oxygen": "link:../rio-oxygen"
