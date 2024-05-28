@@ -13,7 +13,11 @@ field = ( specifier ) ->
       HTML.span specifier.label ? Format.title specifier.name
       input specifier
       ( HTML.span class: "hint", hint ) if hint?
-      HTML.span class: "error", specifier.error?.message
+      HTML.div class: "error", [
+        if specifier.error?
+          HTML.i class: "ri-error-warning-line"
+        HTML.span specifier.error?.message
+      ]
     
     ]
 
