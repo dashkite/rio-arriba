@@ -1,5 +1,6 @@
 import * as Fn from "@dashkite/joy/function"
 import * as Text from "@dashkite/joy/text"
+import HTML from "@dashkite/html-render"
 
 Component =
 
