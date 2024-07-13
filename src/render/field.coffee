@@ -1,5 +1,5 @@
 import HTML from "@dashkite/html-render"
-import Format from "#helpers/format"
+import * as Format from "#format"
 import { input } from "./input"
 
 field = ( specifier ) ->

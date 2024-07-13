@@ -1,13 +1,16 @@
 import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
 import HTML from "@dashkite/html-render"
+import * as Format from "#format"
 
-isEmail = ({ property }) ->
-  ( property?.type == "string" ) &&
-    ( property.subtype == "email" )
+isEmail = ({ type, subtype }) ->
+  ( type == "string" ) && ( subtype == "email" )
 
-isEnumerated = ({ property }) -> 
-  Type.isArray property?.enum
+isEnumerated = ({ type, options }) -> 
+  ( type == "enum" ) && ( Type.isArray options )
+
+isCustom = ({ type, content }) -> 
+  ( type == "custom" ) && content?
 
 input = generic name: "Render.input"
 
@@ -44,5 +47,12 @@ generic input,
   ({ name, value, required }) ->
     value ?= ""
     HTML.input { name, value, type: "email", required }
+
+generic input,
+  isCustom,
+  ({ name, value, required, content }) ->
+    value ?= ""
+    HTML.input { name, value, type: "hidden", required }
+    content
 
 export { input }
