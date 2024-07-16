@@ -31,7 +31,7 @@ generic input,
     #      we could maybe use $from
     #      (non-standard, but none of
     # the standard things work)
-    if options.length > 5
+    if options.length > 6
       HTML.select { name, value },
         for option in options
           HTML.option value: option, option
