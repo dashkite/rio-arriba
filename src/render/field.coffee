@@ -4,15 +4,22 @@ import { input } from "./input"
 
 field = ( specifier ) ->
 
+  label = specifier.label ? Format.title specifier.name
   hint = specifier.hint ? specifier.description
 
   HTML.div class: "field", [
 
     HTML.label [
 
-      HTML.span specifier.label ? Format.title specifier.name
+      if hint?
+        HTML.details class: "hint", [
+          HTML.summary label
+          HTML.span hint
+        ]
+      else
+        HTML.span label
+
       input specifier
-      ( HTML.span class: "hint", hint ) if hint?
       HTML.div class: "error", [
         if specifier.error?
           HTML.i class: "ri-error-warning-line"

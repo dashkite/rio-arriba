@@ -12,6 +12,10 @@ isEnumerated = ({ type, options }) ->
 isCustom = ({ type, content }) -> 
   ( type == "custom" ) && content?
 
+isBoolean = ({ type }) -> type == "boolean"
+
+isRange= ({ type }) -> type == "range"
+
 input = generic name: "Render.input"
 
 generic input,
@@ -21,25 +25,25 @@ generic input,
 
 generic input,
   isEnumerated,
-  ({ property, name, value, required }) ->
+  ({ options, name, value, required }) ->
     value ?= ""
     # TODO check if enum is dynamic
     #      we could maybe use $from
     #      (non-standard, but none of
     # the standard things work)
-    if property.enum.length > 5
+    if options.length > 5
       HTML.select { name, value },
-        for option in property.enum
+        for option in options
           HTML.option value: option, option
     else
-      for option in property.enum
-        HTML.div [
+      for option in options
+        HTML.label [
           HTML.input { 
             name, type: "radio", 
             required
             checked: value == option 
           }
-          HTML.label Format.title option
+          HTML.span Format.title option
         ]
 
 generic input,
@@ -54,5 +58,31 @@ generic input,
     value ?= ""
     HTML.input { name, value, type: "hidden", required }
     content
+
+generic input,
+  isBoolean,
+  ({ label, name, value }) ->
+    value ?= false
+    HTML.label [
+      HTML.input { name, type: "checkbox", checked: value }
+      HTML.span label
+    ]
+
+generic input,
+  isRange,
+  ({ label, name, value, range }) ->
+    value ?= range[0]
+    HTML.div [
+      HTML.datalist id: "#{ name }-list",
+        for item, index in range
+          HTML.option value: index, label: item
+      HTML.input
+        name: name
+        type: "range"
+        min: 0
+        max: range.length - 1
+        value: value
+        list: "#{ name }-list"
+    ]
 
 export { input }
