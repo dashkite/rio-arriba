@@ -4,23 +4,19 @@ import HTML from "@dashkite/html-render"
 
 Attributes =
 
-  toString: ( pairs ) ->
-    result
+  toString: ( dictionary ) ->
+    Object.entries dictionary
       .map ([ key, value ]) -> "#{ key }='#{ value }'"
       .join " "
-
-  toObject: ( pairs ) ->
-    result = {}
-    for key, value of pairs
-      result[ key ] = value
-    result
 
 Component =
 
   attributes: ({ data, rest... }) ->
-    result = []
+    result = {}
+    for key, value of data
+      result[ "data-#{ key }" ] = value
     for key, value of rest
-      result.push [ key, value ]
+      result[ key ] = value
     result
 
   template: "${prefix}-${action}-${target}"
@@ -33,7 +29,7 @@ Component =
     attributes = Component.attributes
       data: bindings
       exportparts: "header:header-2, header-2:header-3, header-3:header-4"
-    HTML.tag tag, Attributes.toObject attributes
+    HTML.tag tag, attributes
 
   html: ({ context..., bindings }) ->
     tag = Component.tag context
