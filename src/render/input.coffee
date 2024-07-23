@@ -40,6 +40,7 @@ generic input,
         HTML.label [
           HTML.input { 
             name, type: "radio", 
+            value: option
             required
             checked: value == option 
           }
