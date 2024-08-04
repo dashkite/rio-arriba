@@ -58,6 +58,7 @@
     "@dashkite/posh": "link:../posh",
     "@dashkite/rio": "link:../rio",
     "@dashkite/rio-forms": "link:../rio-forms",
-    "@dashkite/rio-oxygen": "link:../rio-oxygen"
+    "@dashkite/rio-oxygen": "link:../rio-oxygen",
+    "@dashkite/vellum": "link:../vellum"
   }
 }

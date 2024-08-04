@@ -32,6 +32,9 @@ importers:
       '@dashkite/rio-oxygen':
         specifier: link:../rio-oxygen
         version: link:../rio-oxygen
+      '@dashkite/vellum':
+        specifier: link:../vellum
+        version: link:../vellum
     devDependencies:
       '@dashkite/amen':
         specifier: ^0.2.0

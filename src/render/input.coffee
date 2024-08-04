@@ -1,10 +1,17 @@
 import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
 import HTML from "@dashkite/html-render"
+import "@dashkite/vellum"
 import * as Format from "#format"
 
+isMarkdown = ({ type, subtype }) ->
+  ( type == "markdown" ) && ( subtype == "prose" )
+
+isProse = ({ type, subtype }) ->
+  ( type == "text" ) && ( subtype == "prose" )
+
 isEmail = ({ type, subtype }) ->
-  ( type == "string" ) && ( subtype == "email" )
+  ( type == "text" ) && ( subtype == "email" )
 
 isEnumerated = ({ type, options }) -> 
   ( type == "enum" ) && ( Type.isArray options )
@@ -22,6 +29,22 @@ generic input,
   Type.isObject,
   ({ name, value, required }) ->
     HTML.input { name, value, type: "input", required }
+
+generic input,
+  isMarkdown,
+  ({ subtype, name, value, required, hints }) ->
+    HTML.textarea {
+      name, value, required, 
+      class: "#{ subtype } #{ hints.length }"
+    }
+
+generic input,
+  isProse,
+  ({ subtype, name, value, required, hints }) ->
+    HTML.textarea {
+      name, value, required, 
+      class: "#{ subtype } #{ hints.length }"
+    }
 
 generic input,
   isEnumerated,
