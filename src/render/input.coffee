@@ -4,6 +4,8 @@ import HTML from "@dashkite/html-render"
 import "@dashkite/vellum"
 import * as Format from "#format"
 
+isCustom = ({ type, html }) -> ( type == "custom" ) && html?
+
 isMarkdown = ({ type, subtype }) ->
   ( type == "markdown" ) && ( subtype == "prose" )
 
@@ -16,9 +18,6 @@ isEmail = ({ type, subtype }) ->
 isEnumerated = ({ type, options }) -> 
   ( type == "enum" ) && ( Type.isArray options )
 
-isCustom = ({ type, content }) -> 
-  ( type == "custom" ) && content?
-
 isBoolean = ({ type }) -> type == "boolean"
 
 isRange= ({ type }) -> type == "range"
@@ -28,8 +27,12 @@ input = generic name: "Render.input"
 generic input,
   Type.isObject,
   ({ name, value, required }) ->
-    HTML.input { name, value, type: "input", required }
+    HTML.input { name, value, type: "text", required }
 
+generic input,
+  isCustom,
+  ({ html }) -> html
+   
 generic input,
   isMarkdown,
   ({ subtype, name, value, required, hints }) ->
@@ -48,8 +51,8 @@ generic input,
 
 generic input,
   isEnumerated,
-  ({ options, name, value, required }) ->
-    value ?= ""
+  ({ options, name, value, required, specifier... }) ->
+    value ?= specifier.default ? ""
     # TODO check if enum is dynamic
     #      we could maybe use $from
     #      (non-standard, but none of
@@ -75,13 +78,6 @@ generic input,
   ({ name, value, required }) ->
     value ?= ""
     HTML.input { name, value, type: "email", required }
-
-generic input,
-  isCustom,
-  ({ name, value, required, content }) ->
-    value ?= ""
-    HTML.input { name, value, type: "hidden", required }
-    content
 
 generic input,
   isBoolean,

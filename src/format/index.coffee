@@ -6,6 +6,11 @@ title = Fn.pipe [
   Text.titleCase
 ]
 
+dashed = Fn.pipe [
+  Text.toLowerCase
+  Text.dashed
+]
+
 label = title
 
-export { title, label }
+export { title, dashed, label }
