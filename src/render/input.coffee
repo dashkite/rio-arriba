@@ -15,6 +15,9 @@ isProse = ({ type, subtype }) ->
 isEmail = ({ type, subtype }) ->
   ( type == "text" ) && ( subtype == "email" )
 
+isURL = ({ type, subtype }) -> 
+  ( type == "text" ) && ( subtype == "url" )
+
 isEnumerated = ({ type, options }) -> 
   ( type == "enum" ) && ( Type.isArray options )
 
@@ -78,6 +81,12 @@ generic input,
   ({ name, value, required }) ->
     value ?= ""
     HTML.input { name, value, type: "email", required }
+
+generic input,
+  isURL,
+  ({ name, value, required }) ->
+    value ?= ""
+    HTML.input { name, value, type: "url", required }
 
 generic input,
   isBoolean,
