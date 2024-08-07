@@ -7,7 +7,11 @@ field = ( specifier ) ->
   label = specifier.label ? Format.title specifier.name
   hint = specifier.hint ? specifier.description
 
-  HTML.div class: "field", [
+  classes = [ "field", specifier.name, specifier.type ]
+  if specifier.subtype?
+    classes.push specifier.subtype
+
+  HTML.div class: ( classes.join " " ), [
 
     HTML.label [
 
