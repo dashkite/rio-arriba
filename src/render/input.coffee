@@ -29,8 +29,9 @@ input = generic name: "Render.input"
 
 generic input,
   Type.isObject,
-  ({ name, value, required }) ->
-    HTML.input { name, value, type: "text", required }
+  ({ name, value, type, required }) ->
+    type ?= "text"
+    HTML.input { name, value, type, required }
 
 generic input,
   isCustom,
