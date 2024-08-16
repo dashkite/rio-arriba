@@ -48,12 +48,14 @@
     "@dashkite/genie": "link:../genie",
     "@dashkite/genie-clean": "link:../genie-clean",
     "@dashkite/genie-coffee": "link:../genie-coffee",
-    "@dashkite/genie-module": "link:../genie-module"
+    "@dashkite/genie-module": "link:../genie-module",
+    "@dashkite/genie-stylus": "link:../genie-stylus"
   },
   "dependencies": {
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
+    "@dashkite/katana": "^0.4.8",
     "@dashkite/neon-drive": "link:../neon-drive",
     "@dashkite/posh": "link:../posh",
     "@dashkite/rio": "link:../rio",

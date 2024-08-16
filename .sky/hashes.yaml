@@ -8,3 +8,7 @@ build/browser/src/render/input.js: kPMpdX0o
 build/browser/src/validate.js: sr23076X
 build/browser/src/render/field.js: usMHj8o8
 build/browser/src/index.js: AtBGPEgY
+build/browser/src/components/field/index.js: vr9mVZtp
+build/browser/src/components/field/html.js: VVOFXk3Z
+build/browser/src/components/field/input.js: dObXo0nM
+build/browser/src/components/field/css.js: FG4ecNpu

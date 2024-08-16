@@ -17,6 +17,9 @@ importers:
       '@dashkite/joy':
         specifier: link:../joy
         version: link:../joy
+      '@dashkite/katana':
+        specifier: ^0.4.8
+        version: 0.4.8
       '@dashkite/neon-drive':
         specifier: link:../neon-drive
         version: link:../neon-drive
@@ -57,6 +60,9 @@ importers:
       '@dashkite/genie-module':
         specifier: link:../genie-module
         version: link:../genie-module
+      '@dashkite/genie-stylus':
+        specifier: link:../genie-stylus
+        version: link:../genie-stylus
 
 packages:
 
@@ -74,6 +80,9 @@ packages:
 
   '@dashkite/joy@0.3.16':
     resolution: {integrity: sha512-dsU0us4j1Pb+zceoBvLbnZ2PbmULkJUtM2vtWLxKmoc1DE4w9SVTiPTe6JWvF0A0vk90ldv+Lc9qEA5x3O+DtQ==}
+
+  '@dashkite/katana@0.4.8':
+    resolution: {integrity: sha512-KOfMS5aRZItxPeMv0OXbOTCj5BZhN9jM190jae8HB7WgGB5uM5jEzRWmyh3yVbxTaL83o7csktRzUkxkr/Op1A==}
 
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
@@ -113,6 +122,10 @@ snapshots:
   '@dashkite/helium@0.4.4': {}
 
   '@dashkite/joy@0.3.16': {}
+
+  '@dashkite/katana@0.4.8':
+    dependencies:
+      '@dashkite/joy': 0.3.16
 
   ansi-styles@4.3.0:
     dependencies:

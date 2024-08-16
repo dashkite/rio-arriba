@@ -1,3 +1,9 @@
 coffee:
   targets:
     - browser
+stylus:
+  targets:
+    browser:
+      - preset: js
+        glob:
+          - src/**/*.styl
