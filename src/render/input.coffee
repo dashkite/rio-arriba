@@ -50,7 +50,9 @@ generic input,
   ({ subtype, name, value, required, hints }) ->
     HTML.textarea {
       name, value, required, 
-      class: "#{ subtype } #{ hints.length }"
+      class: if hints?.length?
+        "#{ subtype } #{ hints.length }"
+      else subtype
     }
 
 generic input,
