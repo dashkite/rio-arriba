@@ -1,6 +1,6 @@
 import Component from "#helpers/component"
 
-component = ({ prefix, action, target, bindings }) ->
-  Component.vdom { prefix, action, target, bindings }
+component = ({ prefix, action, target, attributes, bindings }) ->
+  Component.vdom { prefix, action, target, attributes, bindings }
 
 export { component }

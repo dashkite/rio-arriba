@@ -26,9 +26,11 @@ Component =
 
   vdom: ({ context..., bindings }) ->
     tag = Component.tag context
-    attributes = Component.attributes
+    attributes = Component.attributes {
+      context.attributes...
       data: bindings
-      exportparts: "header:header-2, header-2:header-3, header-3:header-4"
+      exportparts: "header:header-2, header-2:header-3, header-3:header-4"      
+    }
     HTML.tag tag, attributes
 
   html: ({ context..., bindings }) ->
