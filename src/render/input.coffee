@@ -96,6 +96,7 @@ generic input,
   ({ label, name, value }) ->
     value ?= false
     HTML.label [
+      HTML.input { name, type: "hidden", value: "off" }
       HTML.input { name, type: "checkbox", checked: value }
       HTML.span label
     ]
