@@ -1,5 +1,5 @@
 import HTML from "@dashkite/html-render"
-import * as Format from "#format"
+import Format from "@dashkite/format-text"
 import { input } from "./input"
 
 Specifier = 

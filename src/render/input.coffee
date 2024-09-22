@@ -2,7 +2,7 @@ import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
 import HTML from "@dashkite/html-render"
 import "@dashkite/vellum"
-import * as Format from "#format"
+import Format from "@dashkite/format-text"
 
 isCustom = ({ type, html }) -> ( type == "custom" ) && html?
 

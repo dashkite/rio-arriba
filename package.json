@@ -29,9 +29,6 @@
   "imports": {
     "#helpers/*": {
       "browser": "./build/browser/src/helpers/*.js"
-    },
-    "#format": {
-      "browser": "./build/browser/src/format/index.js"
     }
   },
   "files": [
