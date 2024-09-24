@@ -49,6 +49,7 @@
     "@dashkite/genie-stylus": "link:../genie-stylus"
   },
   "dependencies": {
+    "@dashkite/format-text": "link:../format-text",
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
