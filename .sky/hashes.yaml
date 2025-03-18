@@ -1,9 +1,9 @@
-build/browser/src/index.js: d8FP9FJ5
-build/browser/src/render/field.js: NssVm3jz
 build/browser/src/render/link.js: '-mUGFwQW'
-build/browser/src/helpers/router.js: Y1HrEwnb
 build/browser/src/render/index.js: Ve5_HRUE
 build/browser/src/render/component.js: nU3UjRCL
-build/browser/src/render/input.js: 4TsQc720
-build/browser/src/helpers/component.js: QH7YXqEk
+build/browser/src/helpers/router.js: Y1HrEwnb
 build/browser/src/validate.js: L5BANiOW
+build/browser/src/index.js: d8FP9FJ5
+build/browser/src/render/field.js: NssVm3jz
+build/browser/src/helpers/component.js: QH7YXqEk
+build/browser/src/render/input.js: 4TsQc720
