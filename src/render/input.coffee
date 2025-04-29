@@ -59,10 +59,6 @@ generic input,
   isEnumerated,
   ({ options, name, value, required, specifier... }) ->
     value ?= specifier.default ? ""
-    # TODO check if enum is dynamic
-    #      we could maybe use $from
-    #      (non-standard, but none of
-    # the standard things work)
     if options.length > 6
       HTML.select { name, value },
         for option in options
