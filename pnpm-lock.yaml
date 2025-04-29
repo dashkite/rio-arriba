@@ -66,6 +66,9 @@ importers:
       '@dashkite/genie-stylus':
         specifier: link:../genie-stylus
         version: link:../genie-stylus
+      '@dashkite/vista':
+        specifier: link:../vista
+        version: link:../vista
 
 packages:
 
