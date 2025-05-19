@@ -50,6 +50,7 @@
     "@dashkite/vista": "link:../vista"
   },
   "dependencies": {
+    "@dashkite/domo": "link:../domo",
     "@dashkite/format-text": "link:../format-text",
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",

@@ -1,4 +1,4 @@
-import HTML from "@dashkite/html-render"
+import HTML from "@dashkite/domo"
 import * as Page from "@dashkite/neon-drive"
 
 link = ( description, content ) ->
